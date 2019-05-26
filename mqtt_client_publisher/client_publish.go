@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"time"
 
@@ -27,11 +28,12 @@ func createClientOptions() *mqtt.ClientOptions {
 }
 
 func main() {
-	topic := "home/office"
+	topic := "test/data"
 
 	client := connect()
 	timer := time.NewTicker(1 * time.Second)
 	for t := range timer.C {
 		client.Publish(topic, 1, true, t.String())
+		fmt.Println("Published Data: ", t.String())
 	}
 }

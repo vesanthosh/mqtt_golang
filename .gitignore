@@ -1,5 +1,5 @@
 # Binaries for programs and plugins
-*.exe
+mqtt_client_publisher/*.exe
 *.exe~
 *.dll
 *.so

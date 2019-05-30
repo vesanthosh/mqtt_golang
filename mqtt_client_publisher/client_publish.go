@@ -34,6 +34,6 @@ func main() {
 	timer := time.NewTicker(1 * time.Second)
 	for t := range timer.C {
 		client.Publish(topic, 1, true, t.String())
-		fmt.Println("Published Data: ", t.String())
+		fmt.Println("Published Data (MQTT): ", t.String())
 	}
 }

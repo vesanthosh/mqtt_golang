@@ -67,7 +67,7 @@ func main() {
 		jsonBody.MemoryUsage.TolalSpace = v.Total
 		jsonBody.MemoryUsage.FreeSpace = v.Free
 		jsonBody.MemoryUsage.MemoryUsed = v.UsedPercent
-		jsonBody.Time = t.String()
+		jsonBody.Time = t
 
 		jsonPayload, err := json.Marshal(jsonBody)
 		if err != nil {

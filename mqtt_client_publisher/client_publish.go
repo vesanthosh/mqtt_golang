@@ -25,7 +25,7 @@ type JSONData struct {
 		FreeSpace  uint64  `json:"freeSpace"`
 		MemoryUsed float64 `json:"memoryUsed"`
 	} `json:"memoryUsage"`
-	Time string `json:"time"`
+	Time time.Time `json:"time"`
 }
 
 func connect() mqtt.Client {

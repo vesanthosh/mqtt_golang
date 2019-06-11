@@ -13,9 +13,10 @@ import (
 )
 
 type JSONData struct {
-	Platform  string `json:"platform"`
-	Version   string `json:"version"`
-	Processes struct {
+	DeviceName string `json:"deviceName"`
+	Platform   string `json:"platform"`
+	Version    string `json:"version"`
+	Processes  struct {
 		Running int `json:"running"`
 		Blocked int `json:"blocked"`
 	} `json:"processes"`
@@ -58,6 +59,7 @@ func main() {
 		v, _ := mem.VirtualMemory()
 
 		jsonBody := JSONData{}
+		jsonBody.DeviceName = "Device_001"
 		jsonBody.Platform = platform
 		jsonBody.Version = version
 		jsonBody.Processes.Running = misc.ProcsRunning
